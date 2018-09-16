@@ -50,6 +50,8 @@ If you get too many "certificate signed by unknown authority" messages, add the 
 
 ## Configuration
 
+See `config.json`.
+
 ### Protocol related options
 
 *enabled*: enable alerts [true, false]
