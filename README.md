@@ -44,8 +44,6 @@ Since TLS 1.3 the Certificate message is encrypted, making it impossible to pass
 
 Openssl separated TLS 1.3 cipher suites from previously used cipher APIs to reduce the risk of misconfigurations. This implementation follows similar logic.
 
-A server may respond with the whole certificate chain. Technically the root CA certificate is self-signed, and will generate an alert. Further testing is required to determine how common it is to receive the whole chain.
-
 It would also be possible to check for key exchange (DH) key lengths. 
 
 If you get too many "certificate signed by unknown authority" messages, add the missing certificates to you system's default store (eg. */etc/ssl/certs*). You should end up with getting alerts only about self-signed certificates and such.
