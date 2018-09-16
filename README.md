@@ -24,12 +24,12 @@ make
 make install
 ```
 
-After that use the typical Go tools:
+After that use the typical Go tools, for example:
 
 ```
 go get github.com/mikkolehtisalo/detecttls
 go build github.com/mikkolehtisalo/detecttls
-go run github.com/mikkolehtisalo/detecttls
+./detecttls -cfg ~/go/src/github.com/mikkolehtisalo/detecttls/config.json
 ```
 
 ## Implementation notes
