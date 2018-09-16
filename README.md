@@ -9,7 +9,7 @@ DetectTLS is a passive SSL/TLS traffic analyzer designed to alert about the use 
 * Detects protocol versions, and ciphers
 * Detects certificate signature algorithms, public key algorithms, expired or future validity dates, and signing CAs
 * Generates alerts based on configuration, eg. for certificates signed by unknown authority
-* Generates alerts to local console, or [Graylog](https://www.graylog.org/)
+* Generates alerts to local console, or [Graylog](https://www.graylog.org/) - see this [screenshot](https://raw.githubusercontent.com/mikkolehtisalo/detecttls/master/screenshot.png) for example.
 * Scales well
 
 ## Installation and usage
