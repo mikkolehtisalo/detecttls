@@ -1,0 +1,35 @@
+{
+    "protocol": {
+        "enabled": true,
+        "allowed_versions" : "VersionTLS12:VersionTLS13",
+        "allowed_ciphers": "ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256",
+        "allowed_ciphersuites": "TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256"
+    },
+    "certificate": {
+        "enabled": true,
+        "allowed_signature_algorithms": "SHA256-RSA:SHA512-RSA:ECDSA-SHA512",
+        "allowed_public_key_algorithms": "ECDSA:DSA:RSA"
+    },
+    "input": {
+        "source": "network",
+        "filename": "testdata/tls10_basic.pcap",
+        "interface": "wlp2s0",
+        "promiscuous": true,
+        "snaplen": 65535
+    },
+    "performance": {
+        "max_workers": 16,
+        "max_queue": 1024
+    },
+    "logging": {
+        "console": true,
+        "graylog": true,
+        "graylog_url": "http://localhost:12201/gelf",
+        "graylog_allow_insecure": true,
+        "graylog_ca_certificates": "testdata/ca.pem"
+    },
+    "debug": {
+        "profile_cpu": false,
+        "profile_mem": false
+    }
+}
