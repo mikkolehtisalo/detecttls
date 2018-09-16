@@ -15,22 +15,22 @@ DetectTLS is a passive SSL/TLS traffic analyzer designed to alert about the use 
 
 Most systems still have openssl <1.1.1, so you probably have to build and install a local version from source:
 
-`
+```
 wget https://www.openssl.org/source/openssl-1.1.1.tar.gz
 tar xvzf openssl-1.1.1.tar.gz
 cd openssl-1.1.1
 ./config --prefix=/opt/openssl --openssldir=/usr/local/ssl
 make
 make install
-`
+```
 
 After that use the typical Go tools:
 
-`
+```
 go get github.com/mikkolehtisalo/detecttls
 go build github.com/mikkolehtisalo/detecttls
 go run github.com/mikkolehtisalo/detecttls
-`
+```
 
 ## Implementation notes
 
