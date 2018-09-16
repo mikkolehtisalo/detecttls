@@ -37,7 +37,7 @@ go build github.com/mikkolehtisalo/detecttls
 
 The implementation is stateless, and does not take the state machine of SSL/TLS protocols into account. This enables scaling up near linearly - just add more hardware and multiplex the packets! 
 
-Passive implementation means you have to be able to sniff the network traffic. For example add a monitoring port to a router. On the other hand, this ensures the application can't negatively impact applications, which is nice especially for legacy systems.
+Passive implementation means you have to be able to sniff the network traffic. For example add a monitoring port to a router. On the other hand, this ensures detecttls can't negatively impact applications, which is nice especially for legacy systems.
 
 Basic optimization has been done. It should be somewhat easy to reach gigabyte/s level analysis performance on proper server hardware.
 
@@ -47,7 +47,7 @@ Since TLS 1.3 the Certificate message is encrypted, making it impossible to pass
 
 Openssl separated TLS 1.3 cipher suites from previously used cipher APIs to reduce the risk of misconfigurations. This implementation follows similar logic.
 
-It would also be possible to check for key exchange (DH) key lengths. 
+It would also be possible to check for key exchange (DH) key lengths. Might be worth adding later.
 
 If you get too many "certificate signed by unknown authority" messages, add the missing certificates to you system's default store (eg. */etc/ssl/certs*). You should end up with getting alerts only about self-signed certificates and such.
 
