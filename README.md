@@ -5,6 +5,7 @@ DetectTLS is a passive SSL/TLS traffic analyzer designed to alert about the use 
 ## Features
 
 * Analyzes traffic from pcap file, or network
+* Passive, does not affect the monitored services
 * Detects protocol versions, and ciphers
 * Detects certificate signature algorithms, public key algorithms, expired or future validity dates, and signing CAs
 * Generates alerts based on configuration, eg. for certificates signed by unknown authority
@@ -35,6 +36,8 @@ go build github.com/mikkolehtisalo/detecttls
 ## Implementation notes
 
 The implementation is stateless, and does not take the state machine of SSL/TLS protocols into account. This enables scaling up near linearly - just add more hardware and multiplex the packets! 
+
+Passive implementation means you have to be able to sniff the network traffic. For example add a monitoring port to a router. On the other hand, this ensures the application can't negatively impact applications, which is nice especially for legacy systems.
 
 Basic optimization has been done. It should be somewhat easy to reach gigabyte/s level analysis performance on proper server hardware.
 
